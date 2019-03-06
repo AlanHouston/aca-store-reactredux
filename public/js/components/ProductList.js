@@ -1,6 +1,8 @@
 import React from "react";
 import ProductDetail from "./ProductDetail";
-export default function ProductList(props){
+import { connect } from 'react-redux';
+
+function ProductList(props){
 
     let productDetails = null;
     if(props.products && props.products.length > 0){
@@ -20,3 +22,12 @@ export default function ProductList(props){
       </div>
     )
 }
+
+//must put this in every component that will use connect
+//products is the name of the prop that we neeed to keep synchronized
+const mapStateToProps = (state ) => {
+   return {
+     products: state.products
+   }
+ }
+  export default connect(mapStateToProps)(ProductList)

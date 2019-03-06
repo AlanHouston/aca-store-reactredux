@@ -3,6 +3,7 @@ import React from "react";
 import App from "./components/App"
 import {createStore,combineReducers} from "redux";
 import state from "./state";
+import { Provider } from 'react-redux'
 
 function shoppingCart(state, action) {
     if (typeof state === 'undefined') {
@@ -29,5 +30,7 @@ function products(state, action) {
 
 
 ReactDOM.render(
-    <App />
-    ,document.getElementById("root"));
+    <Provider store={store}>
+      <App />
+    </Provider>,
+    document.getElementById("root"));
