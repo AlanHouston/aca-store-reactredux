@@ -26,7 +26,8 @@ function products(state, action) {
   let reducers =  combineReducers({
     products,shoppingCart
   })
-  let store = createStore(reducers,state)
+  
+let store = createStore(reducers,state)
 
 
 ReactDOM.render(

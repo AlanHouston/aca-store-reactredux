@@ -26,8 +26,9 @@ function ProductList(props){
 //must put this in every component that will use connect
 //products is the name of the prop that we neeed to keep synchronized
 const mapStateToProps = (state ) => {
-   return {
-     products: state.products
-   }
- }
-  export default connect(mapStateToProps)(ProductList)
+    return {
+        products: state.products
+    }
+}
+
+export default connect(mapStateToProps)(ProductList)
